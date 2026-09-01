@@ -116,10 +116,11 @@ export const joinRoom = createServerFn({ method: "POST" })
   });
 
 export const getRoomState = createServerFn({ method: "POST" })
-  .inputValidator((data: { code: string; playerId?: string }) => ({
+  .inputValidator((data: { code: string; playerId?: string | undefined }) => ({
     code: String(data.code || "").trim().toUpperCase(),
     playerId: data.playerId ? String(data.playerId) : undefined,
   }))
+
   .handler(async ({ data }): Promise<RoomState> => {
     const supabase = await db();
     const room = await loadRoom(data.code);
