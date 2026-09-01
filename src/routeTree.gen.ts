@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HostCodeRouteImport } from './routes/host.$code'
 import { Route as PlayCodeRouteImport } from './routes/play.$code'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HostCodeRoute = HostCodeRouteImport.update({
+  id: '/host/$code',
+  path: '/host/$code',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlayCodeRoute = PlayCodeRouteImport.update({
@@ -25,27 +31,31 @@ const PlayCodeRoute = PlayCodeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/host/$code': typeof HostCodeRoute
   '/play/$code': typeof PlayCodeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/host/$code': typeof HostCodeRoute
   '/play/$code': typeof PlayCodeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/host/$code': typeof HostCodeRoute
   '/play/$code': typeof PlayCodeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/play/$code'
+  fullPaths: '/' | '/host/$code' | '/play/$code'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/play/$code'
-  id: '__root__' | '/' | '/play/$code'
+  to: '/' | '/host/$code' | '/play/$code'
+  id: '__root__' | '/' | '/host/$code' | '/play/$code'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HostCodeRoute: typeof HostCodeRoute
   PlayCodeRoute: typeof PlayCodeRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/host/$code': {
+      id: '/host/$code'
+      path: '/host/$code'
+      fullPath: '/host/$code'
+      preLoaderRoute: typeof HostCodeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/play/$code': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HostCodeRoute: HostCodeRoute,
   PlayCodeRoute: PlayCodeRoute,
 }
 export const routeTree = rootRouteImport
