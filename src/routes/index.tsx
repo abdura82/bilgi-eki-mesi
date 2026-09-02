@@ -54,12 +54,22 @@ function Home() {
           2 TAKIM • TÜRKÇE BİLGİ YARIŞMASI
         </p>
 
+        <Link
+          to="/sorular"
+          className="mt-10 block w-full rounded-2xl bg-foreground px-8 py-5 text-lg font-bold tracking-wide text-background transition-transform hover:scale-[1.01]"
+        >
+          1. SORULARI HAZIRLA
+        </Link>
+        <p className="mt-2 text-xs font-semibold text-muted-foreground">
+          Önce soru havuzunu oluştur, sonra yarışmaya geç.
+        </p>
+
         <button
           onClick={handleCreate}
           disabled={loading}
-          className="mt-10 w-full rounded-2xl bg-foreground px-8 py-5 text-lg font-bold tracking-wide text-background transition-transform hover:scale-[1.01] disabled:opacity-60"
+          className="mt-4 w-full rounded-2xl border-2 border-border bg-panel px-8 py-4 text-base font-bold tracking-wide text-foreground transition-colors hover:bg-muted disabled:opacity-60"
         >
-          {loading ? "OLUŞTURULUYOR..." : "YARIŞMA OLUŞTUR"}
+          {loading ? "OLUŞTURULUYOR..." : "2. YARIŞMAYI BAŞLAT"}
         </button>
 
         <div className="mt-8 border-t border-border pt-6">
@@ -87,3 +97,4 @@ function Home() {
     </main>
   );
 }
+
