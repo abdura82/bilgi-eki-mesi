@@ -31,6 +31,7 @@ function HostScreen() {
   const control = useServerFn(controlRoom);
   const create = useServerFn(createRoom);
   const [pulse, setPulse] = useState<1 | 2 | null>(null);
+  const [lobbyOpen, setLobbyOpen] = useState(false);
   const prevPos = useRef(0);
 
   const q = data?.question ?? null;
@@ -73,7 +74,32 @@ function HostScreen() {
     <main className="min-h-screen bg-background px-4 py-6 sm:px-8">
       <div className="mx-auto w-full max-w-[1400px]">
         <div className="rounded-[var(--radius)] bg-panel p-5 shadow-[var(--shadow-panel)] sm:p-10">
-          {waiting ? (
+          {waiting && !lobbyOpen ? (
+            <section className="flex flex-col items-center py-12 text-center">
+              <p className="text-xs font-semibold tracking-[0.35em] text-muted-foreground">
+                2. ADIM — YARIŞMA
+              </p>
+              <h1 className="mt-3 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl">
+                HALAT YARIŞI
+              </h1>
+              <p className="mt-4 max-w-xl text-sm font-semibold text-muted-foreground sm:text-base">
+                Sorular hazır. "YARIŞMAYI BAŞLAT" dediğinizde QR kod ve oda kodu ekrana gelir,
+                öğrenciler takımlara katılır.
+              </p>
+              <button
+                onClick={() => setLobbyOpen(true)}
+                className="mt-10 rounded-2xl bg-foreground px-10 py-5 text-lg font-bold tracking-wide text-background transition-transform hover:scale-[1.01]"
+              >
+                YARIŞMAYI BAŞLAT
+              </button>
+              <button
+                onClick={() => void navigate({ to: "/sorular" })}
+                className="mt-3 rounded-2xl border-2 border-border px-8 py-3 text-sm font-bold text-foreground hover:bg-muted"
+              >
+                SORULARA DÖN
+              </button>
+            </section>
+          ) : waiting ? (
             <section className="flex flex-col items-center py-6 text-center">
               <p className="text-xs font-semibold tracking-[0.35em] text-muted-foreground">
                 ODA KODU
