@@ -44,6 +44,7 @@ function HostScreen() {
       const id = setTimeout(() => setPulse(null), 700);
       return () => clearTimeout(id);
     }
+    return undefined;
   }, [data?.ropePosition, data]);
 
   const joinUrl =
@@ -190,8 +191,8 @@ function TeamSlot({
   connected,
 }: {
   team: 1 | 2;
-  name?: string;
-  connected?: boolean;
+  name?: string | undefined;
+  connected?: boolean | undefined;
 }) {
   return (
     <div className="rounded-2xl border-2 border-border px-5 py-4 text-left">
@@ -212,7 +213,7 @@ function StatusChip({
   player,
 }: {
   label: string;
-  player?: { name: string; connected: boolean };
+  player?: { name: string; connected: boolean } | undefined;
 }) {
   return (
     <span className="rounded-full bg-muted px-3 py-1">
