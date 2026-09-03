@@ -120,6 +120,12 @@ function HostScreen() {
               {data.players.length === 2 && (
                 <p className="mt-8 text-2xl font-extrabold text-foreground">İKİ OYUNCU HAZIR!</p>
               )}
+              <button
+                onClick={() => act("start")}
+                className="mt-8 rounded-2xl bg-foreground px-10 py-5 text-lg font-bold tracking-wide text-background transition-transform hover:scale-[1.01]"
+              >
+                {data.players.length === 2 ? "OYUNU BAŞLAT" : "OYUNCU BEKLEMEDEN BAŞLAT"}
+              </button>
             </section>
           ) : data.status === "FINISHED" ? (
             <section className="py-10 text-center">
