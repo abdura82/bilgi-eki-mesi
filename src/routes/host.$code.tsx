@@ -185,7 +185,7 @@ function HostScreen() {
           </div>
           <div className="flex flex-wrap gap-2">
             {waiting && lobbyOpen && (
-              <Ctrl onClick={() => act("start")} disabled={data.players.length < 2} primary>
+              <Ctrl onClick={() => act("start")} primary>
                 OYUNU BAŞLAT
               </Ctrl>
             )}
