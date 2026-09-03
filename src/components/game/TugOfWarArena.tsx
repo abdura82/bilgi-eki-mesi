@@ -33,8 +33,8 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         <img
           src={teamPull}
           alt="Takım 1 öğrencileri halatı çekiyor"
-          width={1024}
-          height={768}
+          width={1200}
+          height={896}
           className="w-[34%] max-w-[420px] origin-center transition-transform duration-700 ease-out"
           style={{
             transform: `translateX(${shift * 0.6}%) scale(${pulse === 1 ? 1.04 : 1})`,
@@ -42,7 +42,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         />
 
         {/* Halat + bayrak — görsellerdeki halatla aynı yükseklikte (görsel ortası) */}
-        <div className="pointer-events-none absolute inset-x-0 top-[43.6%] flex -translate-y-1/2 items-center">
+        <div className="pointer-events-none absolute inset-x-0 top-[43.5%] flex -translate-y-1/2 items-center">
           <div
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
@@ -60,9 +60,9 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         <img
           src={teamPull}
           alt="Takım 2 öğrencileri halatı çekiyor"
-          width={1024}
-          height={768}
-          className="w-[34%] max-w-[420px] origin-center -scale-x-100 transition-transform duration-700 ease-out"
+          width={1200}
+          height={896}
+          className="w-[34%] max-w-[420px] origin-center transition-transform duration-700 ease-out"
           style={{
             transform: `scaleX(-1) translateX(${-shift * 0.6}%) scale(${pulse === 2 ? 1.04 : 1})`,
           }}
