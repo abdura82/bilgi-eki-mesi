@@ -42,12 +42,12 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         />
 
         {/* Halat + bayrak — görsellerdeki halatla aynı yükseklikte (görsel ortası) */}
-        <div className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center">
+        <div className="pointer-events-none absolute inset-x-0 top-[43.6%] flex -translate-y-1/2 items-center">
           <div
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
           >
-            <div className="h-[0.75cqw] min-h-[4px] w-full rounded-full" style={ROPE_STYLE} />
+            <div className="h-[0.83cqw] min-h-[5px] w-full rounded-full" style={ROPE_STYLE} />
             <div className="absolute left-1/2 -translate-x-1/2">
               <div className="relative h-3 w-3 rounded-full bg-foreground">
                 <div className="absolute bottom-1 left-1/2 h-9 w-[2px] bg-foreground" />
