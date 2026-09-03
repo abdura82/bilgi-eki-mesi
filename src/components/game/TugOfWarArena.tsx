@@ -62,7 +62,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
           alt="Takım 2 öğrencileri halatı çekiyor"
           width={1024}
           height={768}
-          className="w-[34%] max-w-[420px] origin-center -scale-x-100 transition-transform duration-700 ease-out"
+          className="w-[34%] max-w-[420px] origin-center transition-transform duration-700 ease-out"
           style={{
             transform: `scaleX(-1) translateX(${-shift * 0.6}%) scale(${pulse === 2 ? 1.04 : 1})`,
           }}
