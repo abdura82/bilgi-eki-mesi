@@ -6,11 +6,12 @@ type Props = {
   pulse?: 1 | 2 | null;
 };
 
-/** Halatın görsel dokusu: görsellerdeki halatla aynı renk, kalınlık ve desen. */
+/** Halat dokusu: bükülmüş ip görünümü — her yerde aynı renk ve aynı kalınlık. */
 const ROPE_STYLE: React.CSSProperties = {
-  backgroundColor: "#8f6c48",
+  backgroundColor: "#d9b382",
   backgroundImage:
-    "linear-gradient(to bottom, rgba(255,255,255,0.35) 0 12%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.28) 78%, rgba(255,255,255,0.18) 100%), repeating-linear-gradient(112deg, rgba(0,0,0,0.30) 0 2px, rgba(0,0,0,0) 2px 6px, rgba(255,255,255,0.22) 6px 8px, rgba(0,0,0,0) 8px 13px)",
+    "linear-gradient(to bottom, rgba(255,255,255,0.55) 0 22%, rgba(255,255,255,0.10) 45%, rgba(0,0,0,0.18) 80%, rgba(0,0,0,0.28) 100%), repeating-linear-gradient(60deg, rgba(140,96,54,0.55) 0 1px, rgba(255,255,255,0.30) 1px 3px, rgba(140,96,54,0.35) 3px 5px, rgba(255,255,255,0.10) 5px 7px)",
+  backgroundSize: "100% 100%, 7px 100%",
 };
 
 /**
@@ -35,7 +36,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
           >
-            <div className="h-[0.538cqw] min-h-[4px] w-full rounded-full" style={ROPE_STYLE} />
+            <div className="h-[6px] w-full rounded-full" style={ROPE_STYLE} />
           </div>
         </div>
 
