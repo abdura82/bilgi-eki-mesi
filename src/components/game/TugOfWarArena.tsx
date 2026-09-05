@@ -79,8 +79,3 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
     </div>
   );
 }
-
-      </div>
-    </div>
-  );
-}
