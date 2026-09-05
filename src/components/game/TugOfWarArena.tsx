@@ -36,7 +36,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
           >
-            <div className="h-[6px] w-full rounded-full" style={ROPE_STYLE} />
+            <div className="h-[4px] w-full rounded-full" style={ROPE_STYLE} />
           </div>
         </div>
 
