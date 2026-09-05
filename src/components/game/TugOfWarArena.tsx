@@ -26,7 +26,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
     <div className="@container relative w-full select-none overflow-hidden">
       {/* Dikey kesikli orta çizgi */}
       <div className="pointer-events-none absolute inset-y-0 left-1/2 flex -translate-x-1/2 justify-center">
-        <div className="h-full w-0 border-l-[3px] border-dashed border-foreground/70" />
+        <div className="h-full w-0 border-l-[3px] border-dashed border-foreground/25" />
       </div>
 
       <div className="relative flex items-center justify-between gap-2 px-1 sm:px-4">
@@ -42,20 +42,21 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         />
 
         {/* Halat + bayrak — görsellerdeki halatla aynı yükseklikte (görsel ortası) */}
-        <div className="pointer-events-none absolute inset-x-0 top-[43.5%] flex -translate-y-1/2 items-center">
+        <div className="pointer-events-none absolute inset-x-0 top-[40.8%] flex -translate-y-1/2 items-center">
           <div
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
           >
-            <div className="h-[0.83cqw] min-h-[5px] w-full rounded-full" style={ROPE_STYLE} />
+            <div className="h-[0.567cqw] min-h-[4px] w-full rounded-full" style={ROPE_STYLE} />
             <div className="absolute left-1/2 -translate-x-1/2">
-              <div className="relative h-3 w-3 rounded-full bg-foreground">
-                <div className="absolute bottom-1 left-1/2 h-9 w-[2px] bg-foreground" />
-                <div className="absolute -top-9 left-1/2 h-5 w-8 bg-flag [clip-path:polygon(0_0,100%_28%,0_58%)]" />
+              <div className="relative h-2 w-2 rounded-full bg-foreground/80">
+                <div className="absolute -top-8 left-1/2 h-8 w-[2px] bg-foreground/80" />
+                <div className="absolute -top-8 left-1/2 h-5 w-8 bg-flag [clip-path:polygon(0_0,100%_28%,0_58%)]" />
               </div>
             </div>
           </div>
         </div>
+
 
         <img
           src={teamPull}
