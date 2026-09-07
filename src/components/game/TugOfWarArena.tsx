@@ -1,3 +1,4 @@
+import teamPullWhite from "@/assets/team-pull-white.png";
 import teamPull from "@/assets/team-pull.png";
 
 type Props = {
@@ -67,8 +68,8 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         </div>
 
         <img
-          src={teamPull}
-          alt="Takım 2 öğrencileri halatı çekiyor"
+          src={teamPullWhite}
+          alt="Takım 2 öğrencileri beyaz gömlekle halatı çekiyor"
           width={1200}
           height={896}
           className="relative z-10 w-[34%] max-w-[420px] origin-center transition-transform duration-700 ease-out"
