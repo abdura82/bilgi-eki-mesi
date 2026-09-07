@@ -31,7 +31,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
 
       <div className="relative flex items-center justify-between gap-2 px-1 sm:px-4">
         {/* Halat — öğrencilerin arkasında kalır, böylece halat elleri kesmez */}
-        <div className="pointer-events-none absolute inset-x-0 top-[40.7%] z-0 flex -translate-y-1/2 items-center">
+        <div className="pointer-events-none absolute inset-x-0 top-[42.6%] z-0 flex -translate-y-1/2 items-center">
           <div
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
@@ -52,7 +52,7 @@ export function TugOfWarArena({ ropePosition, pulse }: Props) {
         />
 
         {/* Kırmızı bayrak — halatın ortasında, halatın üstünde durur */}
-        <div className="pointer-events-none absolute inset-x-0 top-[40.7%] z-20 flex -translate-y-1/2 items-center">
+        <div className="pointer-events-none absolute inset-x-0 top-[42.6%] z-20 flex -translate-y-1/2 items-center">
           <div
             className="relative flex w-full items-center transition-transform duration-700 ease-out"
             style={{ transform: `translateX(${shift}%)` }}
