@@ -1,3 +1,4 @@
+import teamPullWhite from "@/assets/team-pull-white.png";
 import teamPull from "@/assets/team-pull.png";
 
 type Props = {
